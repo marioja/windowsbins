@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     // Output the command and arguments
     printf("Executing: %s", curl_path);
     for (int i = 1; i < argc + 1; ++i) {
-        printf(" %s", args[i]);
+        printf(" '%s'", args[i]);
     }
     printf("\n");
 
