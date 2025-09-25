@@ -14,10 +14,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Set up MSVC environment and build
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+      - name: Build with MSVC
         run: |
           cd curl-shim
-          call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
           cl main.c /Fe:curl-shim.exe
         shell: cmd
       - name: Upload artifact
